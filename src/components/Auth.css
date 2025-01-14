@@ -1,0 +1,238 @@
+/* AuthPage.css */
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #e9f0ff, #f9fcff);
+    color: #333;
+}
+
+.auth-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #e9f0ff, #f9fcff);
+    flex-direction: row;
+}
+
+.auth-container {
+    display: flex;
+    width: 80%;
+    max-width: 1200px;
+    border-radius: 12px;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.auth-left {
+    flex: 1;
+    padding: 40px;
+    background: #ffffff;
+    text-align: center;
+}
+
+.auth-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f3f4f6;
+}
+.auth-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.auth-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #3a4374;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #6b7280;
+    margin-bottom: 25px;
+}
+
+.toggle-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    background: #f3f4f6;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.toggle-buttons button {
+    background: transparent;
+    border: none;
+    color: #6b7280;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.toggle-buttons button:hover {
+    color: #3a4374;
+}
+
+.toggle-buttons .active {
+    color: #ffffff;
+    background: linear-gradient(90deg, #6e45e2, #88d3ce);
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-group input {
+    width: 85%;
+    padding: 12px 15px 12px 35px; /* Increased left padding to make space for the icon */
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 15px;
+    background: #f9fafb;
+    outline: none;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+    border: 1px solid #6e45e2;
+    box-shadow: 0px 0px 8px rgba(110, 69, 226, 0.2);
+}
+
+
+.form-group input::placeholder {
+    color: #9ca3af;
+}
+
+.form-group .icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #6b7280;
+}
+
+.submit-button {
+    background: linear-gradient(90deg, #6e45e2, #88d3ce);
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 0;
+    cursor: pointer;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.submit-button:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+}
+
+.or-divider {
+    margin: 20px 0;
+    font-size: 14px;
+    color: #6b7280;
+    position: relative;
+}
+
+.or-divider::before,
+.or-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 32%;
+    height: 1px;
+    background: #e5e7eb;
+}
+
+.or-divider::before {
+    left: 0;
+}
+
+.or-divider::after {
+    right: 0;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+.social-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.social-buttons button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.google-button {
+    background: #db4437;
+    color: white;
+}
+
+.github-button {
+    background: #24292e;
+    color: white;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .auth-container {
+        width: 90%;
+        padding: 30px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .toggle-buttons button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .submit-button {
+        font-size: 14px;
+        padding: 10px 0;
+    }
+
+    .social-buttons button {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+}
