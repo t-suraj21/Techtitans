@@ -5,11 +5,16 @@ import AuthPage from "./components/AuthPage";
 import ProfilePage from "./components/ProfilePage"; // Include the profile page component
 import "./App.css";
 
+
 const App = () => {
     const [users, setUsers] = useState([]); // Store registered users
     const [currentUser, setCurrentUser] = useState(null); // Track the logged-in user
     const [showAuthPage, setShowAuthPage] = useState(false); // Toggle AuthPage
     const [showProfilePage, setShowProfilePage] = useState(false); // Toggle ProfilePage
+
+    const handleOpenAuthPage = () => {
+    setShowAuthPage(true);
+};
 
     // Handle user registration
     const handleRegister = (newUser) => {
@@ -38,10 +43,7 @@ const App = () => {
         alert("You have been logged out.");
     };
 
-    // Open AuthPage
-    const handleOpenAuthPage = () => {
-        setShowAuthPage(true);
-    };
+    
 
     return (
         <div className="app-container">
