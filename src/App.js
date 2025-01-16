@@ -2,19 +2,20 @@ import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 import NavBar from "./components/NavBar";
 import AuthPage from "./components/AuthPage";
-import ProfilePage from "./components/ProfilePage"; // Include the profile page component
+import ProfilePage from "./components/ProfilePage";
+import NewsFeed from "./components/newsfeed"; // Import NewsFeed component
 import "./App.css";
-
 
 const App = () => {
     const [users, setUsers] = useState([]); // Store registered users
     const [currentUser, setCurrentUser] = useState(null); // Track the logged-in user
     const [showAuthPage, setShowAuthPage] = useState(false); // Toggle AuthPage
     const [showProfilePage, setShowProfilePage] = useState(false); // Toggle ProfilePage
+    const [showNewsFeed, setShowNewsFeed] = useState(false); // Toggle NewsFeed
 
     const handleOpenAuthPage = () => {
-    setShowAuthPage(true);
-};
+        setShowAuthPage(true);
+    };
 
     // Handle user registration
     const handleRegister = (newUser) => {
@@ -43,23 +44,28 @@ const App = () => {
         alert("You have been logged out.");
     };
 
-    
-
     return (
         <div className="app-container">
             {/* Navbar */}
-            <NavBar 
-                onRegisterClick={handleOpenAuthPage} 
-                onLogout={handleLogout} 
-                isLoggedIn={!!currentUser} 
-                onProfileClick={() => setShowProfilePage(true)} 
+            <NavBar
+                onRegisterClick={handleOpenAuthPage}
+                onLogout={handleLogout}
+                isLoggedIn={!!currentUser}
+                onProfileClick={() => setShowProfilePage(true)}
+                onNewsFeedClick={() => setShowNewsFeed(true)} // Add NewsFeed button handler
             />
 
             {/* Main Content */}
             {showAuthPage ? (
-                <AuthPage onRegister={handleRegister} onLogin={handleLogin} users={users} />
+                <AuthPage
+                    onRegister={handleRegister}
+                    onLogin={handleLogin}
+                    users={users}
+                />
             ) : showProfilePage && currentUser ? (
                 <ProfilePage user={currentUser} />
+            ) : showNewsFeed ? (
+                <NewsFeed /> // Show the NewsFeed component
             ) : (
                 <div className="welcome-container">
                     <h1>Welcome to Campus Buzz!</h1>
