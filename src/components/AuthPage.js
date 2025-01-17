@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
-import './Auth.css'; // Add the CSS file for styling
+import axios from 'axios';
+import './Auth.css';
 
-const AuthPage = ({ onRegister, onLogin, users }) => {
+const AuthPage = ({ onLogin }) => {
     const [isRegisterMode, setIsRegisterMode] = useState(true);
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         if (isRegisterMode) {
@@ -21,22 +22,31 @@ const AuthPage = ({ onRegister, onLogin, users }) => {
                 return;
             }
 
-            onRegister({ fullName, email, password });
-            alert('Account created successfully!');
-            setFullName('');
-            setEmail('');
-            setPassword('');
-            setConfirmPassword('');
+            // Register API Call
+            try {
+                const response = await axios.post('http://localhost:5001/register', {
+                    email,
+                    password,
+                });
+                alert(response.data.message); // Show success message from the backend
+                setFullName('');
+                setEmail('');
+                setPassword('');
+                setConfirmPassword('');
+            } catch (error) {
+                alert(error.response?.data?.message || 'Registration failed. Try again.');
+            }
         } else {
-            const user = users.find(
-                (user) => user.email === email && user.password === password
-            );
-
-            if (user) {
-                onLogin(user);
-                alert('Logged in successfully!');
-            } else {
-                alert('Invalid email or password.');
+            // Login API Call
+            try {
+                const response = await axios.post('http://localhost:5001/login', {
+                    email,
+                    password,
+                });
+                alert(response.data.message); // Show success message from the backend
+                onLogin(response.data.user); // Pass the user data to the parent component
+            } catch (error) {
+                alert(error.response?.data?.message || 'Login failed. Try again.');
             }
         }
     };
@@ -108,12 +118,6 @@ const AuthPage = ({ onRegister, onLogin, users }) => {
                             {isRegisterMode ? 'Create Account' : 'Login'}
                         </button>
                     </form>
-
-                    <div className="or-divider">Or continue with</div>
-                    <div className="social-buttons">
-                        <button className="google-button">Google</button>
-                        <button className="github-button">GitHub</button>
-                    </div>
                 </div>
                 <div className="auth-right">
                     <img src="xyz.jpg" alt="Auth Image" className="auth-image" />

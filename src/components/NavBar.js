@@ -1,7 +1,9 @@
 import React from "react";
 import { AppBar, Toolbar, Typography, Button, Box, Avatar, Menu, MenuItem } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = ({ onRegisterClick }) => {
+    const navigate = useNavigate();
     const [anchorEl, setAnchorEl] = React.useState(null);
 
     // Handle Profile Menu
@@ -30,13 +32,13 @@ const NavBar = ({ onRegisterClick }) => {
 
                 {/* Center - Links */}
                 <Box sx={{ display: "flex", gap: 3 }}>
-                    <Button color="inherit" href="/">
+                    <Button color="inherit" onClick={() => navigate("/")}>
                         Home
                     </Button>
-                    <Button color="inherit" href="/technews">
+                    <Button color="inherit" onClick={() => navigate("/technews")}>
                         Tech News
                     </Button>
-                    <Button color="inherit" href="/internship">
+                    <Button color="inherit" onClick={() => navigate("/internship")}>
                         Internship
                     </Button>
                 </Box>
