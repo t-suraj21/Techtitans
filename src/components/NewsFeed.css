@@ -8,7 +8,7 @@ body {
 
 .news-feed {
     padding: 20px;
-    background: rgba(13, 20, 46, 0.85);
+    background: rgba(20, 35, 85, 0.901);
     border-radius: 8px;
     margin: 20px auto;
     max-width: 1200px;
@@ -41,7 +41,7 @@ body {
 }
 
 .news-block {
-    background: rgba(20, 30, 60, 0.9);
+    background: rgba(33, 46, 85, 0.819);
     border-radius: 12px;
     overflow: hidden;
     transition: transform 0.3s ease;
