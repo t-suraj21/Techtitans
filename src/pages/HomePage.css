@@ -1,0 +1,202 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: url('../public/home/homepage.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #ffffff;
+}
+
+/* Homepage General Styling */
+.homepage {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Navigation Bar */
+.homepage-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.homepage-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.homepage-title {
+    font-size: 2.5rem;
+    color: #f1f1f1;
+}
+
+.homepage-nav {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-btn {
+    background-color: #322e2e74;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: #626a62;
+    color: #000;
+}
+
+.user-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #f3e4e4;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Main Content */
+.homepage-content {
+    margin: 40px auto;
+}
+
+.homepage-tagline {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+
+/* Search Bar with Image Icon */
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.search-bar input {
+    width: 300px;
+    padding: 10px;
+    border: none;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.337);
+    color: #fffbfb;
+}
+.search-btn {
+    background-color: #ffffff3e; /* Transparent white */
+    color: #000000;
+    border: none;
+    padding: 10px;
+    border-radius: 18px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.search-btn:hover {
+    background-color: #ffffff; /* Fully white background on hover */
+    color: #000; /* Retain black text color */
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow effect */
+}
+
+
+
+
+ /* Features Section */
+ .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 80%;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent blur background */
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.25); /* Individual card blur effect */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+}
+
+.feature p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+/* Social Media Icons */
+/* Social Media Container */
+.social-links-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Heading Styling */
+.social-links-heading {
+    font-size: 1.2rem; /* Regular text size */
+    font-weight: 400; /* Regular text weight */
+    margin-bottom: 15px; /* Space below the text */
+    color: #ffffff; /* Adjust color for visibility */
+}
+
+/* Icons Container */
+.social-icons {
+    display: flex;
+    justify-content: center; /* Center-align the icons */
+    gap: 20px; /* Space between the icons */
+}
+
+/* Social Icon Styling */
+.social-link {
+    display: inline-block;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icon {
+    width: 30px; /* Icon size */
+    height: 30px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-link:hover .social-icon {
+    transform: scale(1.2); /* Slight zoom on hover */
+    filter: brightness(1.2); /* Brighten icon on hover */
+}
