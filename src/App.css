@@ -95,7 +95,7 @@ body {
     backdrop-filter: blur(10px);
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
+  }
 
 .feature {
     display: flex;
@@ -107,6 +107,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
 .feature img {
@@ -129,7 +130,7 @@ body {
   
   /* Footer */
   .footer {
-    margin-top: auto;
+    /* margin-top: auto; */
     padding: 20px;
     text-align: center;
     background: rgba(0, 0, 0, 0.8);
@@ -163,6 +164,24 @@ body {
   
     .search-bar input {
       width: 150px;
+    }
+
+    .features {
+        padding: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    .feature {
+        padding: 15px;
+    }
+
+    .feature img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .feature p {
+        font-size: 1rem;
     }
   }
   

@@ -16,7 +16,7 @@ const NavBar = ({ onRegisterClick }) => {
     };
 
     return (
-        <AppBar position="static" sx={{ bgcolor: "#2d3436" }}>
+        <AppBar position="static" sx={{ bgcolor: "none" }}>
             <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
                 {/* Left - Logo */}
                 <Box sx={{ display: "flex", alignItems: "center" }}>
