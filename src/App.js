@@ -6,6 +6,8 @@ import AuthPage from "./components/AuthPage";
 import ProfilePage from "./components/Profile Page";
 import TechNewsFeed from "./components/technews";
 import Internship from "./components/Intership";
+import Homepage from "./components/Homepage"; // Import Homepage component
+import Resources from "./components/Resources"; // Import Resources component
 import "./App.css";
 
 const App = () => {
@@ -45,61 +47,13 @@ const App = () => {
           onProfileClick={() => (window.location.href = "/profile")}
           onNewsFeedClick={() => (window.location.href = "/technews")}
           onInternshipClick={() => (window.location.href = "/internship")}
+          onResourcesClick={() => (window.location.href = "/resources")} // Add Resources click
         />
 
         {/* Routes */}
         <Routes>
-          {/* Home */}
-          <Route
-            path="/"
-            element={
-              <div className="homepage">
-                {/* Hero Section */}
-                <section className="hero">
-                  <h1>Campus Buzz</h1>
-                  <p>LET'S GROW TOGETHER</p>
-                  <div className="search-bar">
-                    <input type="text" placeholder="Search..." />
-                    <button>🔍</button>
-                  </div>
-                </section>
-
-                {/* Features Section */}
-                <section className="features">
-                  <div className="feature">
-                    <img src="./assets/news.png" alt="TechNews" />
-                    <p>TechNews</p>
-                  </div>
-                  <div className="feature">
-                    <img src="./assets/email.png" alt="Emails" />
-                    <p>Emails</p>
-                  </div>
-                  <div className="feature">
-                    <img src="./assets/internship.png" alt="Internships" />
-                    <p>Internships</p>
-                  </div>
-                  <div className="feature">
-                    <img src="./assets/schedules.png" alt="Schedules" />
-                    <p>Schedules</p>
-                  </div>
-                  <div className="feature">
-                    <img src="./assets/resources.png" alt="Resources" />
-                    <p>Resources</p>
-                  </div>
-                </section>
-
-                {/* Footer */}
-                <footer className="footer">
-                  <p>Follow us:</p>
-                  <div className="social-icons">
-                    <img src="./assets/instagram.png" alt="Instagram" />
-                    <img src="./assets/facebook.png" alt="Facebook" />
-                    <img src="./assets/twitter.png" alt="Twitter" />
-                  </div>
-                </footer>
-              </div>
-            }
-          />
+          {/* Homepage */}
+          <Route path="/" element={<Homepage />} />
 
           {/* Tech News Feed */}
           <Route path="/technews" element={<TechNewsFeed />} />
@@ -126,6 +80,9 @@ const App = () => {
               />
             }
           />
+
+          {/* Resources Page */}
+          <Route path="/resources" element={<Resources />} />
         </Routes>
       </div>
     </Router>
