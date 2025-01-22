@@ -8,11 +8,11 @@ body {
 
 .news-feed {
     padding: 20px;
-    background: rgba(20, 35, 85, 0.901);
+    /* background: rgba(20, 35, 85, 0.495); */
     border-radius: 8px;
     margin: 20px auto;
     max-width: 1200px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); */
 }
 
 .news-header {
@@ -22,7 +22,7 @@ body {
 
 .news-header h1 {
     font-size: 2.5rem;
-    color: hsl(197, 100%, 95%);
+    color: hsl(184, 83%, 14%);
     margin: 0;
 }
 
