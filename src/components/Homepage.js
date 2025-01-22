@@ -46,7 +46,7 @@ const Homepage = () => {
           </a>
 
           {/* Resources */}
-          <a href="#" className="feature">
+          <a href="/Resources" className="feature">
             <img src="./home/resources.png" alt="Resources" />
             <p>Resources</p>
           </a>

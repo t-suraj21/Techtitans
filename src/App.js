@@ -7,6 +7,7 @@ import ProfilePage from "./components/Profile Page";
 import TechNewsFeed from "./components/technews";
 import Internship from "./components/Intership";
 import Homepage from "./components/Homepage"; // Import Homepage component
+import Resources from "./components/Resources"; // Import Resources component
 import "./App.css";
 
 const App = () => {
@@ -46,6 +47,7 @@ const App = () => {
           onProfileClick={() => (window.location.href = "/profile")}
           onNewsFeedClick={() => (window.location.href = "/technews")}
           onInternshipClick={() => (window.location.href = "/internship")}
+          onResourcesClick={() => (window.location.href = "/resources")} // Add Resources click
         />
 
         {/* Routes */}
@@ -78,6 +80,9 @@ const App = () => {
               />
             }
           />
+
+          {/* Resources Page */}
+          <Route path="/resources" element={<Resources />} />
         </Routes>
       </div>
     </Router>
