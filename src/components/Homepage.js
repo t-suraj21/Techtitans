@@ -1,6 +1,45 @@
 import React from "react";
 import { Search } from "lucide-react";
 import "./HomePage.css";
+
+// Sample data for TechNews, Internships, and Resources
+const techNews = [
+  { title: "AI Revolution in 2025", link: "/technews/ai-revolution" },
+  { title: "Top Programming Trends", link: "/technews/programming-trends" },
+  { title: "Future of Web Development", link: "/technews/web-future" },
+];
+
+const internships = [
+  { name: "Google Software Internship", link: "/internship/google" },
+  { name: "Microsoft AI Research Internship", link: "/internship/microsoft" },
+  { name: "Tesla Engineering Internship", link: "/internship/tesla" },
+];
+
+const resources = [
+  { name: "ReactJS Documentation", link: "/resources/reactjs" },
+  { name: "JavaScript Tutorials", link: "/resources/javascript" },
+  { name: "Web Development Guide", link: "/resources/web-dev" },
+];
+
+// Additional content from respective pages
+const extendedInternships = [
+  { name: "Internshala", link: "https://internshala.com" },
+  { name: "LinkedIn Internships", link: "https://www.linkedin.com/internships" },
+  { name: "Google Internships", link: "https://careers.google.com/internships/" },
+];
+
+const extendedTechNews = [
+  { title: "Advancements in Quantum Computing", link: "/technews/quantum-computing" },
+  { title: "The Rise of Open Source AI", link: "/technews/open-source-ai" },
+  { title: "Cybersecurity Challenges in 2025", link: "/technews/cybersecurity-2025" },
+];
+
+const extendedResources = [
+  { name: "HTML & CSS for Beginners", link: "https://example.com/html-css" },
+  { name: "Python for Data Science", link: "https://example.com/python-ds" },
+  { name: "Machine Learning Basics", link: "https://example.com/ml-basics" },
+];
+
 const Homepage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-950 to-blue-900 text-white homepage">
@@ -50,6 +89,48 @@ const Homepage = () => {
             <img src="./home/resources.png" alt="Resources" />
             <p>Resources</p>
           </a>
+        </div>
+
+        {/* TechNews Section */}
+        <div className="latest-section">
+          <h3 className="section-title">Latest Tech News</h3>
+          <ul className="list">
+            {[...techNews, ...extendedTechNews].map((news, index) => (
+              <li key={index} className="list-item">
+                <a href={news.link} className="list-link">
+                  {news.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Internship Section */}
+        <div className="latest-section">
+          <h3 className="section-title">Top Internship Opportunities</h3>
+          <ul className="list">
+            {[...internships, ...extendedInternships].map((internship, index) => (
+              <li key={index} className="list-item">
+                <a href={internship.link} className="list-link">
+                  {internship.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Resources Section */}
+        <div className="latest-section">
+          <h3 className="section-title">Top Learning Resources</h3>
+          <ul className="list">
+            {[...resources, ...extendedResources].map((resource, index) => (
+              <li key={index} className="list-item">
+                <a href={resource.link} className="list-link">
+                  {resource.name}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className="social-links-container">
