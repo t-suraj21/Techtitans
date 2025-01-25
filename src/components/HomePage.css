@@ -1,165 +1,178 @@
-/* Base Styles */
-body {
+ /* General Body Styling */
+ body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Arial', sans-serif;
+  background: url('../../public/home/homepage.jpg') no-repeat center center fixed;
+  background-size: cover;
   color: #ffffff;
 }
 
+/* Homepage General Styling */
 .homepage {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem 1rem;
+  text-align: center;
+  padding: 20px;
 }
 
-/* Tagline */
+
+/* Main Content */
+.homepage-content {
+    margin: 40px auto;
+}
+
 .homepage-tagline {
-  font-size: 2.5rem;
-  font-weight: 700;
-  background: linear-gradient(90deg, #00c6ff, #0072ff);
-  
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0px 4px 10px rgba(0, 114, 255, 0.4);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
 }
 
-/* Search Bar */
+
+/* Search Bar with Image Icon */
+
 .search-bar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    position: relative;
 }
 
 .search-bar input {
-  width: 100%;
-  padding: 1rem 1rem 1rem 1.5rem;
-  border: none;
-  border-radius: 50px;
-  background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-  font-size: 1.2rem;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  outline: none;
-  transition: all 0.3s ease;
+    width: 300px;
+    padding: 10px;
+    border: none;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.337);
+    color: #fffbfb;
+    font-size: 1.2rem;
+}
+.search-btn {
+    background-color: #ffffff3e; /* Transparent white */
+    color: #000000;
+    border: none;
+    padding: 10px;
+    border-radius: 18px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Smooth transition */
 }
 
-.search-bar input::placeholder {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 1rem;
+.search-btn:hover {
+    background-color: #ffffff; /* Fully white background on hover */
+    color: #000; /* Retain black text color */
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow effect */
 }
 
-.search-bar input:focus {
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
-}
 
-.search-bar .search-btn {
-  position: absolute;
-  right: 1rem;
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 1.5rem;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
 
-.search-bar .search-btn:hover {
-  color: #ffffff;
-}
 
-/* Features Section */
-.features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(117px, 1fr));
-  width: 91%;
-  gap: 2rem;
-  justify-items: center;
-  margin: 3rem 0;
+ /* Features Section */
+ .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(117px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 80%;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent blur background */
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
 }
 
 .feature {
-  text-align: center;
-  background: linear-gradient(145deg, #002e4f, #003f70);
-  padding: 1.5rem;
-  border-radius: 15px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.feature:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.25); /* Individual card blur effect */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
 }
 
 .feature img {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 1rem;
-  filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.3));
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
 }
 
 .feature p {
-  margin-top: 0.5rem;
-  font-weight: 600;
-  font-size: 1.2rem;
-  color: #e0e0e0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #ffffff;
 }
 
-/* Social Links */
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+/* Social Media Icons */
+/* Social Media Container */
 .social-links-container {
-  text-align: center;
-  margin-top: 2rem;
+    text-align: center;
+    margin-top: 20px;
 }
 
+/* Heading Styling */
 .social-links-heading {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  text-shadow: 0px 3px 10px rgba(0, 114, 255, 0.4);
+    font-size: 1.2rem; /* Regular text size */
+    font-weight: 400; /* Regular text weight */
+    margin-bottom: 15px; /* Space below the text */
+    color: #ffffff; /* Adjust color for visibility */
 }
 
+/* Icons Container */
 .social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
+    display: flex;
+    justify-content: center; /* Center-align the icons */
+    gap: 20px; /* Space between the icons */
 }
 
+/* Social Icon Styling */
 .social-link {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.social-link:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .social-icon {
-  width: 40px;
-  height: 40px;
+    width: 30px; /* Icon size */
+    height: 30px;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
+
+.social-link:hover .social-icon {
+    transform: scale(1.2); /* Slight zoom on hover */
+    filter: brightness(1.2); /* Brighten icon on hover */
+}   
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .homepage-tagline {
-    font-size: 1.8rem;
+    .homepage-tagline {
+      font-size: 1.8rem;
+    }
+  
+    .search-bar input {
+      font-size: 1rem;
+    }
+  
+    .feature p {
+      font-size: 1rem;
+    }
+  
+    .social-links-heading {
+      font-size: 1.2rem;
+    }
+  
+    .social-icon {
+      width: 30px;
+      height: 30px;
+    }
   }
-
-  .search-bar input {
-    font-size: 1rem;
-  }
-
-  .feature p {
-    font-size: 1rem;
-  }
-
-  .social-links-heading {
-    font-size: 1.2rem;
-  }
-
-  .social-icon {
-    width: 30px;
-    height: 30px;
-  }
-}
