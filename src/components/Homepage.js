@@ -64,7 +64,7 @@ const Homepage = () => {
             <p>TechNews</p>
           </a>
           <a href="#" className="feature">
-            <img src="./home/email.png" alt="Emails" />
+            <img src="./home/counsellor.png" alt="Counsellor" />
             <p>Counsellor</p>
           </a>
           <a href="/Internship" className="feature">
@@ -72,8 +72,8 @@ const Homepage = () => {
             <p>Internships</p>
           </a>
           <a href="#" className="feature">
-            <img src="./home/schedules.png" alt="Schedules" />
-            <p>Schedules</p>
+            <img src="./home/schedules.png" alt="Events" />
+            <p>Events</p>
           </a>
           <a href="/Resources" className="feature">
             <img src="./home/resources.png" alt="Resources" />

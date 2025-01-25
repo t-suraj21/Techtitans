@@ -138,36 +138,43 @@ body {
 .list-link:hover {
   color: #ffffff;
 }
-
-/* Social Media Links */
+/* Social Media Container */
 .social-links-container {
-  margin: 3rem 0;
   text-align: center;
+  margin-top: 20px;
 }
 
+/* Heading Styling */
 .social-links-heading {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
+  font-size: 1.2rem; /* Regular text size */
+  font-weight: 400; /* Regular text weight */
+  margin-bottom: 15px; /* Space below the text */
+  color: #ffffff; /* Adjust color for visibility */
 }
 
+/* Icons Container */
 .social-icons {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  justify-content: center; /* Center-align the icons */
+  gap: 20px; /* Space between the icons */
+}
+
+/* Social Icon Styling */
+.social-link {
+  display: inline-block;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .social-icon {
-  width: 40px;
-  height: 40px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-radius: 50%;
+  width: 30px; /* Icon size */
+  height: 30px;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.social-icon:hover {
-  transform: scale(1.2);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
+.social-link:hover .social-icon {
+  transform: scale(1.2); /* Slight zoom on hover */
+  filter: brightness(1.2); /* Brighten icon on hover */
+}   
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -183,4 +190,17 @@ body {
     font-size: 0.9rem;
     padding: 0.8rem 1.5rem;
   }
+  .feature p {
+    font-size: 1rem;
+  }
+
+  .social-links-heading {
+    font-size: 1.2rem;
+  }
+
+  .social-icon {
+    width: 30px;
+    height: 30px;
+  }
+
 }
