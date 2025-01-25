@@ -21,7 +21,6 @@ const resources = [
   { name: "Web Development Guide", link: "/resources/web-dev" },
 ];
 
-// Additional content from respective pages
 const extendedInternships = [
   { name: "Internshala", link: "https://internshala.com" },
   { name: "LinkedIn Internships", link: "https://www.linkedin.com/internships" },
@@ -60,34 +59,29 @@ const Homepage = () => {
 
         {/* Features Section */}
         <div className="features">
-          {/* Tech News */}
           <a href="/technews" className="feature">
             <img src="./home/technews.png" alt="Tech News" />
             <p>TechNews</p>
           </a>
-
-          {/* Emails */}
           <a href="#" className="feature">
             <img src="./home/email.png" alt="Emails" />
             <p>Counsellor</p>
           </a>
-
-          {/* Internships */}
           <a href="/Internship" className="feature">
             <img src="./home/internships.png" alt="Internships" />
             <p>Internships</p>
           </a>
-
-          {/* Schedules */}
           <a href="#" className="feature">
             <img src="./home/schedules.png" alt="Schedules" />
             <p>Schedules</p>
           </a>
-
-          {/* Resources */}
           <a href="/Resources" className="feature">
             <img src="./home/resources.png" alt="Resources" />
             <p>Resources</p>
+          </a>
+          <a href="/chatbot" className="feature">
+            <img src="./home/chatbot.png" alt="Chatbot" />
+            <p>Chatbot</p>
           </a>
         </div>
 
@@ -133,16 +127,17 @@ const Homepage = () => {
           </ul>
         </div>
 
+        {/* Social Links Section */}
         <div className="social-links-container">
           <h3 className="social-links-heading">Follow us on:</h3>
           <div className="social-icons">
-            <a href="https://facebook.com" className="social-link" target="_blank">
+            <a href="https://facebook.com" className="social-link" target="_blank" rel="noopener noreferrer">
               <img src="./home/facebook.png" alt="Facebook" className="social-icon" />
             </a>
-            <a href="https://twitter.com" className="social-link" target="_blank">
+            <a href="https://twitter.com" className="social-link" target="_blank" rel="noopener noreferrer">
               <img src="./home/twitter.png" alt="Twitter" className="social-icon" />
             </a>
-            <a href="https://instagram.com" className="social-link" target="_blank">
+            <a href="https://instagram.com" className="social-link" target="_blank" rel="noopener noreferrer">
               <img src="./home/instagram.png" alt="Instagram" className="social-icon" />
             </a>
           </div>
