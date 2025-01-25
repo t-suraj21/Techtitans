@@ -23,7 +23,9 @@ const NavBar = ({ onRegisterClick }) => {
     };
 
     return (
-        <AppBar position="static" sx={{ bgcolor: "primary.main" }}>
+        <AppBar position="static" sx={{ bgcolor: "transparent" }}>
+      
+      
             <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
                 {/* Left - Logo */}
                 <Box sx={{ display: "flex", alignItems: "center" }}>
@@ -79,13 +81,13 @@ const NavBar = ({ onRegisterClick }) => {
 
                 {/* Right - Profile and Register */}
                 <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-                    {/* Profile */}
-                    <Avatar
-                        onClick={handleMenuClick}
-                        sx={{ cursor: "pointer", bgcolor: "#0984e3" }}
-                        alt="User Profile"
-                    >
-                        U
+    {/* Profile */}
+    <Avatar
+        onClick={handleMenuClick}
+        sx={{ cursor: "pointer" }}
+        alt="User Profile"
+        src="./home/profile-image.png" // Use the correct path to the uploaded image
+    >
                     </Avatar>
                     <Menu
                         anchorEl={anchorEl}
