@@ -55,7 +55,7 @@ const NavBar = ({ onRegisterClick }) => {
                         </Box>
                     </Drawer>
                     <Avatar
-                        src="https://via.placeholder.com/150" // Replace with your logo URL
+                        src="./assets/icon.png" // Replace with your logo URL
                         alt="Campus Buzz Logo"
                         sx={{ marginRight: 1, display: { xs: "none", md: "block" } }}
                     />
