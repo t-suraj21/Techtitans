@@ -23,9 +23,7 @@ body {
   margin-bottom: 2rem;
 }
 
-
 /* Search Bar with Image Icon */
-
 .search-bar {
   display: flex;
   justify-content: center;
@@ -42,6 +40,7 @@ body {
   color: #fffbfb;
   font-size: 1.2rem;
 }
+
 .search-bar input:focus {
   outline: none;
   background-color: rgba(255, 255, 255, 0.2);
@@ -65,9 +64,6 @@ body {
   transform: scale(1.05); /* Slight zoom effect */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow effect */
 }
-
-
-
 
 /* Features Section */
 .features {
@@ -143,44 +139,86 @@ body {
 .list-link:hover {
   color: #ffffff;
 }
-/* Social Media Container */
-.social-links-container {
-  text-align: center;
-  margin-top: 20px;
-}
 
-/* Heading Styling */
-.social-links-heading {
-  font-size: 1.2rem; /* Regular text size */
-  font-weight: 400; /* Regular text weight */
-  margin-bottom: 15px; /* Space below the text */
-  color: #ffffff; /* Adjust color for visibility */
-}
+/* Footer Section */
 
-/* Icons Container */
-.social-icons {
+.footer-content {
+  margin-top: 3rem;
+  padding: 2rem 1rem;
+  color: #ffffff;
+  background: transparent; /* Transparent background to blend with the page */
   display: flex;
-  justify-content: center; /* Center-align the icons */
-  gap: 20px; /* Space between the icons */
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.934); /* Optional divider */
 }
 
-/* Social Icon Styling */
-.social-link {
-  display: inline-block;
-  transition: transform 0.3s ease, filter 0.3s ease;
+.footer-section {
+  flex: 1;
+  min-width: 200px;
 }
 
-.social-icon {
-  width: 30px; /* Icon size */
+.footer-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #00bcd4;
+ 
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-section ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #00bcd4;
+  transform: scale(1.05); /* Zoom effect */
+}
+
+.footer-section p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  color: #ffffff;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #ffffff;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.908); /* Optional divider */
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+/* Social Icons Styling */
+.social-icons img {
+  width: 30px;
   height: 30px;
+  margin-right: 0.5rem;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.social-link:hover .social-icon {
-  transform: scale(1.2); /* Slight zoom on hover */
-  filter: brightness(1.2); /* Brighten icon on hover */
-}   
-
+.social-icons img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
 /* Responsive Design */
 @media (max-width: 768px) {
   .homepage-tagline {
@@ -195,17 +233,17 @@ body {
     font-size: 0.9rem;
     padding: 0.8rem 1.5rem;
   }
+
   .feature p {
     font-size: 1rem;
   }
 
-  .social-links-heading {
-    font-size: 1.2rem;
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .social-icon {
-    width: 30px;
-    height: 30px;
+  .footer-section {
+    text-align: center;
   }
-
 }
