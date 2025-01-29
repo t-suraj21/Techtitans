@@ -4,21 +4,25 @@ import "./NewsFeed.css";
 const NewsFeed = () => {
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [nextPage, setNextPage] = useState(null);
+  const [nextPage, setNextPage] = useState(null); // Store next page token
+  const [prevPages, setPrevPages] = useState([]); // Store previous pages for navigation
 
   const API_KEY = "pub_66873f7ab8d98be881cdbea55344501b995eb";
-  const API_URL = `https://newsdata.io/api/1/news?apikey=${API_KEY}&q=tech%20industry`;
+  const BASE_URL = `https://newsdata.io/api/1/news?apikey=${API_KEY}&q=tech%20industry`;
 
   const fetchNews = async (url) => {
     setLoading(true);
     try {
       const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
       const data = await response.json();
+
+      if (data.status === "error") {
+        console.error("API Error:", data.message);
+        return;
+      }
+
       setNews(data.results || []);
-      setNextPage(data.nextPage || null); // Get next page token
+      setNextPage(data.nextPage || null);
     } catch (error) {
       console.error("Error fetching news:", error);
     } finally {
@@ -27,12 +31,21 @@ const NewsFeed = () => {
   };
 
   useEffect(() => {
-    fetchNews(API_URL);
+    fetchNews(BASE_URL);
   }, []);
 
-  const loadNextPage = () => {
+  const nextPageHandler = () => {
     if (nextPage) {
-      fetchNews(`${API_URL}&page=${nextPage}`);
+      setPrevPages([...prevPages, nextPage]); // Store current page for back navigation
+      fetchNews(`${BASE_URL}&page=${nextPage}`);
+    }
+  };
+
+  const prevPageHandler = () => {
+    if (prevPages.length > 0) {
+      const lastPage = prevPages[prevPages.length - 1];
+      setPrevPages(prevPages.slice(0, -1)); // Remove last page from history
+      fetchNews(`${BASE_URL}&page=${lastPage}`);
     }
   };
 
@@ -50,30 +63,30 @@ const NewsFeed = () => {
         <h1>Tech Industry News</h1>
       </header>
 
-      <div className="news-list">
+      <div className="news-grid">
         {news.map((article, index) => (
           <div key={index} className="news-card">
             {article.image_url && (
               <img src={article.image_url} alt={article.title} className="news-image" />
             )}
             <div className="news-content">
-              <h3 className="news-title">{article.title}</h3>
-              <p className="news-description">{article.description}</p>
+              <h3 className="news-title">{article.title.slice(0, 100)}...</h3>
               <a href={article.link} target="_blank" rel="noopener noreferrer" className="news-link">
-                Read full article →
+                Read More →
               </a>
             </div>
           </div>
         ))}
       </div>
 
-      {nextPage && (
-        <div className="pagination">
-          <button onClick={loadNextPage} className="page-button">
-            Load More News →
-          </button>
-        </div>
-      )}
+      <div className="pagination">
+        <button onClick={prevPageHandler} disabled={prevPages.length === 0} className="page-button">
+          ← Previous
+        </button>
+        <button onClick={nextPageHandler} disabled={!nextPage} className="page-button">
+          Next →
+        </button>
+      </div>
     </div>
   );
 };

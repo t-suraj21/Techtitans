@@ -1,119 +1,107 @@
-/* General Styling */
-body {
-  font-family: "Arial", sans-serif;
-  background-color: #f4f4f4;
+/* Reset Styles */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
 }
 
 /* News Feed Container */
 .news-feed {
   width: 90%;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: auto;
   padding: 20px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Header */
 .news-header {
   text-align: center;
-  padding: 15px;
-  background: #0073e6;
-  color: white;
-  border-radius: 8px 8px 0 0;
-}
-
-.news-header h1 {
-  margin: 0;
+  padding-bottom: 15px;
   font-size: 24px;
+  font-weight: bold;
+  border-bottom: 2px solid #ddd;
 }
 
-/* News List */
-.news-list {
+/* News Grid */
+.news-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  gap: 15px;
   margin-top: 20px;
 }
 
 /* News Card */
 .news-card {
-  background: white;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
 }
 
 .news-card:hover {
   transform: scale(1.03);
 }
 
+/* Image */
 .news-image {
   width: 100%;
   height: 180px;
   object-fit: cover;
+  border-radius: 5px;
 }
 
+/* News Content */
 .news-content {
-  padding: 15px;
+  text-align: center;
+  margin-top: 10px;
 }
 
 .news-title {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
-  margin: 0;
-}
-
-.news-description {
-  font-size: 14px;
-  color: #555;
-  margin-top: 8px;
+  padding: 5px;
 }
 
 .news-link {
-  display: inline-block;
-  margin-top: 10px;
   font-size: 14px;
   color: #0073e6;
   text-decoration: none;
   font-weight: bold;
+  margin-top: 8px;
+  display: inline-block;
 }
 
 .news-link:hover {
   text-decoration: underline;
 }
 
-/* Loading & No News */
-.loading,
-.no-news {
-  text-align: center;
-  font-size: 18px;
-  padding: 20px;
-  color: #555;
-}
-
 /* Pagination */
 .pagination {
-  display: flex;
-  justify-content: center;
+  text-align: center;
   margin-top: 20px;
 }
 
 .page-button {
-  background: #0073e6;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
+  background: none;
+  border: 1px solid #0073e6;
+  color: #0073e6;
+  padding: 8px 15px;
+  font-size: 14px;
   cursor: pointer;
   border-radius: 5px;
-  transition: background 0.3s;
+  transition: all 0.3s ease-in-out;
 }
 
 .page-button:hover {
-  background: #005bb5;
+  background: #0073e6;
+  color: white;
+}
+
+.page-info {
+  font-size: 14px;
+  margin: 0 10px;
 }

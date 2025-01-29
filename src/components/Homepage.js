@@ -2,174 +2,74 @@ import React from "react";
 import { Search } from "lucide-react";
 import "./HomePage.css";
 
-// Sample data for TechNews, Internships, and Resources
-const techNews = [
-  { title: "AI Revolution in 2025", link: "/technews/ai-revolution" },
-  { title: "Top Programming Trends", link: "/technews/programming-trends" },
-  { title: "Future of Web Development", link: "/technews/web-future" },
-];
-
-const internships = [
-  { name: "Google Software Internship", link: "/internship/google" },
-  { name: "Microsoft AI Research Internship", link: "/internship/microsoft" },
-  { name: "Tesla Engineering Internship", link: "/internship/tesla" },
-];
-
-const resources = [
-  { name: "ReactJS Documentation", link: "/resources/reactjs" },
-  { name: "JavaScript Tutorials", link: "/resources/javascript" },
-  { name: "Web Development Guide", link: "/resources/web-dev" },
-];
-
-const extendedInternships = [
-  { name: "Internshala", link: "https://internshala.com" },
-  { name: "LinkedIn Internships", link: "https://www.linkedin.com/internships" },
-  { name: "Google Internships", link: "https://careers.google.com/internships/" },
-];
-
-const extendedTechNews = [
-  { title: "Advancements in Quantum Computing", link: "/technews/quantum-computing" },
-  { title: "The Rise of Open Source AI", link: "/technews/open-source-ai" },
-  { title: "Cybersecurity Challenges in 2025", link: "/technews/cybersecurity-2025" },
-];
-
-const extendedResources = [
-  { name: "HTML & CSS for Beginners", link: "https://example.com/html-css" },
-  { name: "Python for Data Science", link: "https://example.com/python-ds" },
-  { name: "Machine Learning Basics", link: "https://example.com/ml-basics" },
-];
-
 const Homepage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-950 to-blue-900 text-white homepage">
-      {/* Main Content */}
-      <main className="max-w-4xl mx-auto mt-8 px-4 homepage-content">
-        {/* Tagline */}
-        <h2 className="text-2xl text-center mb-8 homepage-tagline">LET'S GROW TOGETHER</h2>
-
-        {/* Search Bar */}
-        <div className="relative max-w-2xl mx-auto mb-16 search-bar">
+      {/* Hero Section */}
+      <section className="hero flex flex-col items-center justify-center text-center py-20">
+        <h1 className="text-4xl font-bold mb-4 animate-fade-in">Welcome to Campus Buzz</h1>
+        <p className="text-lg text-gray-300 max-w-xl animate-slide-up">
+          Stay updated with the latest campus news, events, internship opportunities, and tech trends – all in one place.
+        </p>
+        <div className="relative max-w-2xl mx-auto mt-6 animate-fade-in">
           <input
             type="text"
             className="w-full px-4 py-3 rounded-full bg-white/20 backdrop-blur-sm"
-            placeholder="Search..."
+            placeholder="Search campus news, internships, resources..."
           />
-          <Search className="absolute right-4 top-3 text-gray-300 search-btn hover:text-white" />
+          <Search className="absolute right-4 top-3 text-gray-300 hover:text-white" />
         </div>
+      </section>
 
-        {/* Features Section */}
-        <div className="features">
-          <a href="/technews" className="feature">
-            <img src="./home/technews.png" alt="Tech News" />
-            <p>TechNews</p>
-          </a>
-          <a href="#" className="feature">
-            <img src="./home/counsellor.png" alt="Counsellor" />
-            <p>Counsellor</p>
-          </a>
-          <a href="/Internship" className="feature">
-            <img src="./home/internships.png" alt="Internships" />
-            <p>Internships</p>
-          </a>
-          <a href="#" className="feature">
-            <img src="./home/schedules.png" alt="Events" />
-            <p>Events</p>
-          </a>
-          <a href="/Resources" className="feature">
-            <img src="./home/resources.png" alt="Resources" />
-            <p>Resources</p>
-          </a>
-          <a href="/chatbot" className="feature">
-            <img src="./home/chatbot.png" alt="Chatbot" />
-            <p>Chatbot</p>
-          </a>
-        </div>
+      {/* Agenda Section */}
+      <section className="agenda px-8 py-16 text-center">
+        <h2 className="text-3xl font-semibold mb-6">Our Mission</h2>
+        <p className="text-lg text-gray-300 max-w-3xl mx-auto animate-fade-in">
+          Campus Buzz is your one-stop platform for staying informed about university news, tech advancements, and career opportunities. 
+          Our goal is to create a bridge between students and valuable resources that enhance their academic and professional journey.
+        </p>
+      </section>
 
-        {/* TechNews Section */}
-        <div className="latest-section">
-          <h3 className="section-title">Latest Tech News</h3>
-          <ul className="list">
-            {[...techNews, ...extendedTechNews].map((news, index) => (
-              <li key={index} className="list-item">
-                <a href={news.link} className="list-link">
-                  {news.title}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+      {/* Features Section */}
+      <section className="features grid grid-cols-2 md:grid-cols-3 gap-6 px-8 py-16 text-center animate-slide-up">
+        <a href="/technews" className="feature">
+          <img src="./home/technews.png" alt="Tech News" />
+          <p>TechNews</p>
+        </a>
+        <a href="#" className="feature">
+          <img src="./home/counsellor.png" alt="Counsellor" />
+          <p>Counsellor</p>
+        </a>
+        <a href="/Internship" className="feature">
+          <img src="./home/internships.png" alt="Internships" />
+          <p>Internships</p>
+        </a>
+        <a href="#" className="feature">
+          <img src="./home/schedules.png" alt="Events" />
+          <p>Events</p>
+        </a>
+        <a href="/Resources" className="feature">
+          <img src="./home/resources.png" alt="Resources" />
+          <p>Resources</p>
+        </a>
+        <a href="/chatbot" className="feature">
+          <img src="./home/chatbot.png" alt="Chatbot" />
+          <p>Chatbot</p>
+        </a>
+      </section>
 
-        {/* Internship Section */}
-        <div className="latest-section">
-          <h3 className="section-title">Top Internship Opportunities</h3>
-          <ul className="list">
-            {[...internships, ...extendedInternships].map((internship, index) => (
-              <li key={index} className="list-item">
-                <a href={internship.link} className="list-link">
-                  {internship.name}
-                </a>
-              </li>
-            ))}
-          </ul>
+      {/* Motion Graphics Section */}
+      <section className="motion-graphics py-16 text-center animate-fade-in">
+        <h2 className="text-3xl font-semibold mb-6">Explore, Learn & Grow</h2>
+        <div className="flex justify-center">
+          <img src="./home/motion-graphic.gif" alt="Engaging Motion" className="w-3/4 md:w-1/2" />
         </div>
-
-        {/* Resources Section */}
-        <div className="latest-section">
-          <h3 className="section-title">Top Learning Resources</h3>
-          <ul className="list">
-            {[...resources, ...extendedResources].map((resource, index) => (
-              <li key={index} className="list-item">
-                <a href={resource.link} className="list-link">
-                  {resource.name}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </main>
+      </section>
 
       {/* Footer Section */}
-      
-        <div className="footer-content">
-          <div className="footer-section">
-            <h4 className="footer-title">About Us</h4>
-            <p>
-              We are committed to providing the best resources, news, and
-              opportunities for developers and learners around the globe.
-            </p>
-          </div>
-          <div className="footer-section">
-            <h4 className="footer-title">Quick Links</h4>
-            <ul>
-              <li><a href="/technews">Tech News</a></li>
-              <li><a href="/internship">Internships</a></li>
-              <li><a href="/resources">Resources</a></li>
-            </ul>
-          </div>
-          <div className="footer-section">
-            <h4 className="footer-title">Contact Us</h4>
-            <p>Email: support@example.com</p>
-            <p>Phone: +1 234 567 890</p>
-          </div>
-          <div className="footer-section">
-            <h4 className="footer-title">Follow Us</h4>
-            <div className="social-icons">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                <img src="./home/facebook.png" alt="Facebook" />
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                <img src="./home/twitter.png" alt="Twitter" />
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                <img src="./home/instagram.png" alt="Instagram" />
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <p>&copy; 2025 YourWebsite. All Rights Reserved.</p>
-        </div>
-     
+      <footer className="footer px-8 py-12 text-center bg-blue-800">
+        <p className="text-gray-300">&copy; 2025 Campus Buzz. All Rights Reserved.</p>
+      </footer>
     </div>
   );
 };
