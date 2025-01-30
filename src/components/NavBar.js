@@ -67,7 +67,7 @@ const NavBar = ({ onRegisterClick }) => {
                 </Box>
 
                 {/* Center - Links for larger screens */}
-                {/* <Box sx={{ display: { xs: "none", md: "flex" }, gap: 3 }}>
+                <Box sx={{ display: { xs: "none", md: "flex" }, gap: 3 }}>
                     <Button color="inherit" onClick={() => navigate("/")}>
                         Home
                     </Button>
@@ -77,7 +77,7 @@ const NavBar = ({ onRegisterClick }) => {
                     <Button color="inherit" onClick={() => navigate("/internship")}>
                         Internship
                     </Button>
-                </Box> */}
+                </Box>
 
                 {/* Right - Profile and Register */}
                 <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>

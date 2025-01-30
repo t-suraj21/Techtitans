@@ -16,6 +16,7 @@ html {
   color: white;
   text-align: center;
   overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
 }
 
 /* 🎯 Hero Section */
@@ -110,6 +111,7 @@ html {
   border-radius: 12px;
   text-align: center;
   transition: all 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
 .feature img {
@@ -126,6 +128,7 @@ html {
 .feature:hover {
   background: rgba(255, 255, 255, 0.2);
   transform: translateY(-5px);
+  transform: scale(1.05);
 }
 
 /* 🎞️ Motion Graphics */
@@ -207,4 +210,28 @@ html {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Animations */
+.animate-fade-in {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 1.2s ease-in-out;
+}
+
+/* Dark Mode */
+.dark {
+  background-color: #1a202c;
+  color: #e2e8f0;
+}
+
+.dark input {
+  background-color: #2d3748;
+  color: white;
+}
+
+.dark .footer {
+  background-color: #1a202c;
 }
