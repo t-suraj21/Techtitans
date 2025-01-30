@@ -17,7 +17,7 @@ const Homepage = () => {
             className="w-full px-4 py-3 rounded-full bg-white/20 backdrop-blur-sm"
             placeholder="Search campus news, internships, resources..."
           />
-          <Search className="absolute right-4 top-3 text-gray-300 hover:text-white" />
+          {/* <Search className="absolute right-4 top-3 text-gray-300 hover:text-white" /> */}
         </div>
       </section>
 
