@@ -12,6 +12,7 @@
     "axios": "^1.7.9",
     "cra-template": "1.2.0",
     "customize-cra": "^1.0.0",
+    "firebase": "^11.2.0",
     "lucide-react": "^0.471.1",
     "react": "^19.0.0",
     "react-app-rewired": "^2.2.1",

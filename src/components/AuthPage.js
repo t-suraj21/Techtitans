@@ -4,15 +4,23 @@ import './Auth.css';
 
 const AuthPage = ({ onLogin }) => {
     const [isRegisterMode, setIsRegisterMode] = useState(true);
-    const [fullName, setFullName] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
+    const [formData, setFormData] = useState({
+        fullName: '',
+        email: '',
+        password: '',
+        confirmPassword: '',
+    });
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         if (isRegisterMode) {
+            const { fullName, email, password, confirmPassword } = formData;
+
             if (!fullName || !email || !password || !confirmPassword) {
                 alert('Please fill in all fields.');
                 return;
@@ -25,26 +33,25 @@ const AuthPage = ({ onLogin }) => {
             // Register API Call
             try {
                 const response = await axios.post('http://localhost:5001/register', {
+                    fullName,
                     email,
                     password,
                 });
-                alert(response.data.message); // Show success message from the backend
-                setFullName('');
-                setEmail('');
-                setPassword('');
-                setConfirmPassword('');
+                alert(response.data.message);
+                setFormData({ fullName: '', email: '', password: '', confirmPassword: '' });
             } catch (error) {
                 alert(error.response?.data?.message || 'Registration failed. Try again.');
             }
         } else {
-            // Login API Call
+            const { email, password } = formData;
+
             try {
                 const response = await axios.post('http://localhost:5001/login', {
                     email,
                     password,
                 });
-                alert(response.data.message); // Show success message from the backend
-                onLogin(response.data.user); // Pass the user data to the parent component
+                alert(response.data.message);
+                onLogin(response.data.user);
             } catch (error) {
                 alert(error.response?.data?.message || 'Login failed. Try again.');
             }
@@ -78,9 +85,10 @@ const AuthPage = ({ onLogin }) => {
                             <div className="form-group">
                                 <input
                                     type="text"
+                                    name="fullName"
                                     placeholder="Full Name"
-                                    value={fullName}
-                                    onChange={(e) => setFullName(e.target.value)}
+                                    value={formData.fullName}
+                                    onChange={handleChange}
                                     required
                                 />
                             </div>
@@ -88,18 +96,20 @@ const AuthPage = ({ onLogin }) => {
                         <div className="form-group">
                             <input
                                 type="email"
+                                name="email"
                                 placeholder="Email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
+                                value={formData.email}
+                                onChange={handleChange}
                                 required
                             />
                         </div>
                         <div className="form-group">
                             <input
                                 type="password"
+                                name="password"
                                 placeholder="Password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
+                                value={formData.password}
+                                onChange={handleChange}
                                 required
                             />
                         </div>
@@ -107,9 +117,10 @@ const AuthPage = ({ onLogin }) => {
                             <div className="form-group">
                                 <input
                                     type="password"
+                                    name="confirmPassword"
                                     placeholder="Confirm Password"
-                                    value={confirmPassword}
-                                    onChange={(e) => setConfirmPassword(e.target.value)}
+                                    value={formData.confirmPassword}
+                                    onChange={handleChange}
                                     required
                                 />
                             </div>
